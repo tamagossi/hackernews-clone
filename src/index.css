@@ -12,13 +12,15 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .el-centered {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
+.pointer-default { cursor: default; }
