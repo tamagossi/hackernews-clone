@@ -15,7 +15,7 @@ const Navbar = () => {
   ]
 
   return (
-    <div className="navbar-wrapper flex flex-nowrap justify-between w-100 w-80-l mt2-l mh-auto-l bg-orange">
+    <div className="navbar-wrapper flex flex-nowrap justify-between w-100 w-80-l mt2-l bg-orange">
       <div className="left-menu flex flex-wrap w-90">
         <div className="image-wrapper w-10 pv3 pv1-l ph1">
           <NavLink to="">

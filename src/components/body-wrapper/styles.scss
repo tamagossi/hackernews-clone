@@ -1,0 +1,8 @@
+.body-wrapper {
+  background-color: #f6f6ef;
+  height: 820px;
+
+  @media (min-width: 920px) {
+    margin: 0 auto;
+  }
+}
