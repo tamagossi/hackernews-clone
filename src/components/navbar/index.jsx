@@ -19,16 +19,21 @@ const Navbar = () => {
       <div className="left-menu flex flex-wrap w-90">
         <div className="image-wrapper w-10 pv3 pv1-l ph1">
           <NavLink to="">
-            <img className="hacker-logo ba b--white"
+            <img
+              className="hacker-logo ba b--white"
               alt="Hacker News Logo"
               src="https://news.ycombinator.com/y18.gif"
             />
           </NavLink>
         </div>
         <div className="menu-wrapper w-90 flex flex-wrap pv1-l">
-          <div className="menu-title w-100 f4 fw7">
+          <NavLink
+            className="menu-title w-100 f4 fw7"
+            to="/news"
+
+          >
             Hacker News
-          </div>
+          </NavLink>
           <div className="menu-item w-100 f6 f5-l fw5 fw4-l">
             {
               menu.map((item, index) => {
