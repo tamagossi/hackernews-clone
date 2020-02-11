@@ -1,9 +1,12 @@
 import React from 'react';
+import ErrorBoundary from './components/error-boundary/'
 
 const App = () => {
   return (
     <div className="App">
-      Project Start
+      <ErrorBoundary>
+        Hallo mate
+      </ErrorBoundary>
     </div>
   );
 }
