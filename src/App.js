@@ -1,11 +1,13 @@
 import React from 'react';
-import ErrorBoundary from './components/error-boundary/'
+
+import ErrorBoundary from './components/error-boundary'
+import Home from './pages/homepage'
 
 const App = () => {
   return (
     <div className="App">
       <ErrorBoundary>
-        Hallo mate
+        <Home />
       </ErrorBoundary>
     </div>
   );
