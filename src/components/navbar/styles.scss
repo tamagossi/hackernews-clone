@@ -1,9 +1,31 @@
-.image-wrapper {
-  width: 6%;
-}
+.navbar-wrapper {
+  @media (min-width: 920px) {
+    margin: 0 auto;
+  }
 
-.menu-wrapper {
-  width: 94%;
+  .image-wrapper {
+    @media (min-width: 920px) {
+      width: 5%;
+    }
+  }
+
+  .menu-wrapper {
+    @media (min-width: 920px) {
+      width: 95%;
+    }
+
+    .menu-title {
+      @media (min-width: 920px) {
+        width: 15%;
+      }
+    }
+
+    .menu-item {
+      @media (min-width: 920px) {
+        width: 85%;
+      }
+    }
+  }
 }
 
 .navbar-active {

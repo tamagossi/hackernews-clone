@@ -1,11 +1,12 @@
 import React from 'react'
 
-import Navbar from '../../components/navbar'
+import BodyWrapper from '../../components/body-wrapper'
 
 const Homepage = () => {
   return (
     <>
-      <Navbar />
+      <BodyWrapper>
+      </BodyWrapper>
     </>
   )
 }

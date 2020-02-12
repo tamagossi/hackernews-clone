@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const menu = [
@@ -15,45 +15,52 @@ const Navbar = () => {
   ]
 
   return (
-    <div className="navbar-wrapper flex flex-nowrap justify-between w-100 bg-orange">
+    <div className="navbar-wrapper flex flex-nowrap justify-between w-100 w-80-l mt2-l bg-orange">
       <div className="left-menu flex flex-wrap w-90">
-        <div className="image-wrapper pv3 ph1">
-          <Link to="">
-            <img className="hacker-logo ba b--white"
+        <div className="image-wrapper w-10 pv3 pv1-l ph1">
+          <NavLink to="">
+            <img
+              className="hacker-logo ba b--white"
               alt="Hacker News Logo"
               src="https://news.ycombinator.com/y18.gif"
             />
-          </Link>
+          </NavLink>
         </div>
-        <div className="menu-wrapper flex flex-wrap pv2">
-          <div className="menu-title w-100 f4 fw7">
+        <div className="menu-wrapper w-90 flex flex-wrap pv1-l">
+          <NavLink
+            className="menu-title w-100 f4 fw7"
+            to="/news"
+
+          >
             Hacker News
-          </div>
-          <div className="menu-item w-100 f6 fw5">
+          </NavLink>
+          <div className="menu-item w-100 f6 f5-l fw5 fw4-l">
             {
               menu.map((item, index) => {
                 const linkTag = item.url.length > 1 ? (
-                  <Link
+                  <NavLink
                     activeClassName="navbar-active"
                     to={item.url}
                   >
                     { item.name }
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <span className="pointer-default">
+                  <span className="pointer-default" >
                     { item.name }
                   </span>
                 )
 
                 return index !== menu.length - 1 ?
                 (
-                  <>
+                  <span key={item.name}>
                     { linkTag }
-                    <span class="pointer-default ph1"> | </span>
-                  </>
+                    <span className="pointer-default ph1"> | </span>
+                  </span>
                 ) :
                 (
-                  linkTag
+                  <span key={item.name}>
+                    { linkTag }
+                  </span>
                 )
               })
             }
