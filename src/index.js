@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
 
 import App from './App';
 import './index.css';
 
-import * as serviceWorker from './serviceWorker';
-
 import 'tachyons';
+import store from './redux'
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
