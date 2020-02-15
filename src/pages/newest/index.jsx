@@ -8,7 +8,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import BodyWrapper from '../../components/body-wrapper';
-import Items from '../../components/items/';
+import Items from '../../components/items';
 
 const Askpage = () => {
   const dispatch = useDispatch();
