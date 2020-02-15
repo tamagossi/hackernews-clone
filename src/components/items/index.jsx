@@ -19,18 +19,27 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
                     className="flex flex-nowrap justify-start w-100 mb3"
                     key={ item.id }
                   >
-                    <h5 className="item-number gray f5 fw6 mv0">
-                      { currentPage * PAGE_LIMIT + index + 1}.
-                    </h5>
-                    <i className="fa fa-caret-up tooltip ml1 gray pointer">
-                      <span className="tooltiptext">Vote functionality is disabled at the moment</span>
-                    </i>
-
+                    {
+                      type !== "job" ? (
+                        <>
+                          <h5 className="item-number gray f5 fw6 mv0">
+                            { currentPage * PAGE_LIMIT + index + 1}.
+                          </h5>
+                          <i className="fa fa-caret-up tooltip ml1 gray pointer">
+                            <span className="tooltiptext">Vote functionality is disabled at the moment</span>
+                          </i>
+                        </>
+                      ) :
+                      null
+                    }
                     <div className="item-content flex flex-wrap w-100">
                       <div className="item-title flex flex-nowrap w-100 ph2">
-                        <h3 className="fw4 mv0">
+                        <a
+                          className="fw4 mv0 pointer"
+                          href={item.url}
+                        >
                           { item.title }
-                        </h3>
+                        </a>
                         <h5 className="fw4 mv1 ml1 gray">
                           {
                             item.url ? (
@@ -45,15 +54,23 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
                       </div>
 
                       <div className="item-info flex flex-nowrap w-100">
-                        <span className="info-wrapper gray f7 ph2">
+                        <span className={`${ type !== "job" ? `ph2` : ``} info-wrapper gray f7`}>
                           <span className="score-wrapper">
-                            { item.score } points
+                            {
+                              type !== 'job' ?
+                              `${item.score} points` :
+                              null
+                            }
                           </span>
                           <DisabledNavLink
                             otherClass="creator-wrapper has-space has-underline gray pointer"
                             message={ null }
                           >
-                            by { item.by }
+                            {
+                              type !== 'job' ?
+                              `by ${ item.by }` :
+                              null
+                            }
                           </DisabledNavLink>
                           <DisabledNavLink
                             otherClass="creator-wrapper has-space has-underline gray pointer"
@@ -102,9 +119,13 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
                             {
                               type !== "new" ?
                               (
-                                <span className="comment-wrapper has-underline has-line pointer">
-                                  ${item.kids ? item.kids.length : 0} comments
-                                </span>
+                                  type !== 'job' ?
+                                  (
+                                    <span className="comment-wrapper has-underline has-line pointer">
+                                      {item.kids ? item.kids.length : 0} comments
+                                    </span>
+                                  ) :
+                                  null
                               ) : null
                             }
                         </span>
@@ -117,7 +138,7 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
             {
               items.length > 0 ? (
                 <div
-                  className="ph4 gray f4 has-underline pointer"
+                  className={`${ type !== "job" ? `ph4` : `ph2`} gray f4 has-underline pointer`}
                   onClick={() => loadMore()}
                 >
                   More
