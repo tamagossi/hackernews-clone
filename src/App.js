@@ -5,7 +5,6 @@ import Spinner from './components/spinner';
 import routes from './routes';
 
 import { Route, Switch } from 'react-router-dom';
-import PageNotFound from './pages/not-found';
 
 const App = () => {
   return (
@@ -27,7 +26,6 @@ const App = () => {
                 ) : (null);
               })
             }
-            <Route component={PageNotFound} />
           </Suspense>
         </Switch>
       </ErrorBoundary>
