@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="menu-wrapper w-90 flex flex-wrap pv1-l">
           <NavLink
             className="menu-title w-100 f4 fw7"
-            to="/news"
+            to=""
 
           >
             Hacker News
