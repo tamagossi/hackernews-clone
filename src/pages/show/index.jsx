@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 
-import { NavLink } from 'react-router-dom';
-
 import {
   fetchShowStoriesStartAsync,
   increasePageNumber
@@ -9,6 +7,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import BodyWrapper from '../../components/body-wrapper';
+import DisabledNavLink from '../../components/disabled-link'
 import Items from '../../components/items';
 
 const Showpage = () => {
@@ -21,6 +20,7 @@ const Showpage = () => {
   }
 
   useEffect(() => {
+    document.title = `Show | ${document.title}`
     dispatch(fetchShowStoriesStartAsync(currentPage));
   }, [dispatch, currentPage])
 
@@ -29,21 +29,13 @@ const Showpage = () => {
       <BodyWrapper>
         <h5 className="show-tagline f5 fw4 gray ph4 mt2 mb3">
           Please read the
-          <NavLink
-            className="pointer tooltip"
-            to=""
-          >
+          <DisabledNavLink>
             &nbsp;<u>rules</u>.
-            <span className="tooltiptext">Currently disabled. Will be directed to home</span>
-          </NavLink>
+          </DisabledNavLink>
           You can also browse the
-          <NavLink
-            className="pointer tooltip"
-            to=""
-          >
+          <DisabledNavLink>
             &nbsp;<u>newest</u>&nbsp;
-            <span className="tooltiptext">Currently disabled. Will be directed to home</span>
-          </NavLink>
+          </DisabledNavLink>
           Show NHs
         </h5>
         <Items

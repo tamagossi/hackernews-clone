@@ -20,6 +20,7 @@ const Askpage = () => {
   }
 
   useEffect(() => {
+    document.title = `Ask | ${document.title}`
     dispatch(fetchAskStoriesStartAsync(currentPage));
   }, [dispatch, currentPage])
 

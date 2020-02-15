@@ -20,6 +20,7 @@ const Askpage = () => {
   }
 
   useEffect(() => {
+    document.title = `New Links | ${document.title}`
     dispatch(fetchNewestStoriesStartAsync(currentPage));
   }, [dispatch, currentPage])
 
