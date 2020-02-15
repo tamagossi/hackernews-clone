@@ -1,7 +1,9 @@
 import React from 'react'
 import './styles.scss'
 
+import { NavLink } from 'react-router-dom';
 import mapTime from '../../utils/timeMap';
+import DisabledNavLink from '../disabled-link';
 import PropTypes from 'prop-types';
 
 
@@ -44,26 +46,52 @@ const Item = ({ currentPage, items, loadMore, type }) => {
                           <span className="score-wrapper">
                             { item.score } points
                           </span>
-                          <span className="creator-wrapper has-space has-underline pointer">
+                          <DisabledNavLink
+                            otherClass="creator-wrapper has-space has-underline gray pointer"
+                            message={ null }
+                          >
                             by { item.by }
-                          </span>
-                          <span className="time-wrapper has-space has-underline pointer">
+                          </DisabledNavLink>
+                          <DisabledNavLink
+                            otherClass="creator-wrapper has-space has-underline gray pointer"
+                            message={ null }
+                          >
                             { mapTime(item.time) } ago
-                          </span>
+                          </DisabledNavLink>
                           <span className="action-wrapper">
                             {
                               type === `home` || type === `new` ?
                               (
-                                <span className="has-line has-underline pointer">hide</span>
+                                <DisabledNavLink
+                                  otherClass="has-line has-underline gray pointer"
+                                  message={ null }
+                                >
+                                  hide
+                                </DisabledNavLink>
                               ) : null
                             }
                             {
                               type === `new` ?
                               (
                                 <>
-                                  <span className="has-line has-underline pointer">past</span>
-                                  <span className="has-line has-underline pointer">web</span>
-                                  <span className="has-line has-underline pointer">discuss</span>
+                                  <DisabledNavLink
+                                    otherClass="has-line has-underline gray pointer"
+                                    message={ null }
+                                  >
+                                    past
+                                  </DisabledNavLink>
+                                  <DisabledNavLink
+                                    otherClass="has-line has-underline gray pointer"
+                                    message={ null }
+                                  >
+                                    web
+                                  </DisabledNavLink>
+                                  <DisabledNavLink
+                                    otherClass="has-line has-underline gray pointer"
+                                    message={ null }
+                                  >
+                                    discuss
+                                  </DisabledNavLink>
                                 </>
                               ) : null
                             }

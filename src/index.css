@@ -48,6 +48,14 @@ a {
   visibility: visible;
 }
 
+.has-line::before {
+  content: "\00a0|\00a0";
+}
+
+.has-underline:hover {
+  text-decoration: underline;
+}
+
 .has-space::before {
   content: "\00a0";
 }
