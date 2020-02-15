@@ -47,3 +47,7 @@ a {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.has-space::before {
+  content: "\00a0";
+}
