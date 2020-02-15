@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import BodyWrapper from '../../components/body-wrapper';
 import Items from '../../components/items/';
 
-const Homepage = () => {
+const Askpage = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector(state => state.newestStories.currentPage);
   const newestStories = useSelector(state => state.newestStories.newestStories);
@@ -37,4 +37,4 @@ const Homepage = () => {
   )
 }
 
-export default Homepage
+export default Askpage
