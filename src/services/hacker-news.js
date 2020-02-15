@@ -9,7 +9,7 @@ const PAGE_LIMIT = 30;
 const getPageSlice = (limit, page = 0) => ({ begin: page * limit, end: (page + 1) * limit });
 const getPageValues = ({ begin, end, items }) => items.slice(begin, end);
 
-hackerNewsService.getNewStoryIds = () => client.get(`/newstories${JSON_QUERY}`);
+hackerNewsService.getNewestStoryIds = () => client.get(`/newstories${JSON_QUERY}`);
 hackerNewsService.getTopStoryIds = () => client.get(`/topstories${JSON_QUERY}`);
 
 hackerNewsService.getStory = id => client.get(`/item/${id}${JSON_QUERY}`);
