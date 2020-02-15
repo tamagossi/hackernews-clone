@@ -11,6 +11,7 @@ const getPageValues = ({ begin, end, items }) => items.slice(begin, end);
 
 hackerNewsService.getAskStoryIds = () => client.get(`/askstories${JSON_QUERY}`);
 hackerNewsService.getNewestStoryIds = () => client.get(`/newstories${JSON_QUERY}`);
+hackerNewsService.getShowStoryIds = () => client.get(`/showstories${JSON_QUERY}`);
 hackerNewsService.getTopStoryIds = () => client.get(`/topstories${JSON_QUERY}`);
 
 hackerNewsService.getStory = id => client.get(`/item/${id}${JSON_QUERY}`);
