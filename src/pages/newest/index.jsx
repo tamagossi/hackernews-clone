@@ -8,11 +8,13 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import BodyWrapper from '../../components/body-wrapper';
+import ErrorIndicator from '../../components/error';
 import Items from '../../components/items';
 
 const Askpage = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector(state => state.newestStories.currentPage);
+  const error = useSelector(state => state.newestStories.error);
   const isFetching = useSelector(state => state.newestStories.isFetching);
   const newestStories = useSelector(state => state.newestStories.newestStories);
 
@@ -28,13 +30,17 @@ const Askpage = () => {
   return (
     <>
       <BodyWrapper>
-        <Items
-          currentPage={ currentPage }
-          isFetching={ isFetching }
-          items={ newestStories }
-          loadMore={ loadMore }
-          type="new"
-        />
+        {
+          !error ?
+            <Items
+              currentPage={ currentPage }
+              isFetching={ isFetching }
+              items={ newestStories }
+              loadMore={ loadMore }
+              type="new"
+            /> :
+            <ErrorIndicator />
+        }
       </BodyWrapper>
     </>
   )

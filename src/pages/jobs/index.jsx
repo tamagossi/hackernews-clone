@@ -8,6 +8,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import BodyWrapper from '../../components/body-wrapper';
+import ErrorIndicator from '../../components/error';
 import Items from '../../components/items';
 
 const Jobpage = () => {
@@ -15,6 +16,7 @@ const Jobpage = () => {
 
   const jobStories = useSelector(state => state.jobStories.jobStories);
   const currentPage = useSelector(state => state.jobStories.currentPage);
+  const error = useSelector(state => state.jobStories.error);
   const isFetching = useSelector(state => state.jobStories.isFetching);
 
   const loadMore = () => {
@@ -29,34 +31,41 @@ const Jobpage = () => {
   return (
     <>
       <BodyWrapper>
-        <span className="ph2 pt2 pb3 gray">
-          These are jobs at YC startups. See more at
-          <a
-            className="pointer"
-            href="https://www.workatastartup.com/"
-          >
-            &nbsp;<u>Work at a Startup</u>,
-          </a>
-          <a
-            className="pointer"
-            href="https://triplebyte.com/?ref=yc_jobs"
-          >
-            &nbsp;<u>Triplebyte</u>,
-          </a>
-          <a
-            className="pointer"
-            href="https://www.keyvalues.com/yc-funded-companies"
-          >
-            &nbsp;<u>Key Values</u>.
-          </a>
-        </span>
-        <Items
-          currentPage={ currentPage }
-          isFetching={ isFetching }
-          items={ jobStories }
-          loadMore={ loadMore }
-          type="job"
-        />
+        {
+          !error ? (
+            <>
+              <span className="ph2 pt2 pb3 gray">
+                These are jobs at YC startups. See more at
+                <a
+                  className="pointer"
+                  href="https://www.workatastartup.com/"
+                >
+                  &nbsp;<u>Work at a Startup</u>,
+                </a>
+                <a
+                  className="pointer"
+                  href="https://triplebyte.com/?ref=yc_jobs"
+                >
+                  &nbsp;<u>Triplebyte</u>,
+                </a>
+                <a
+                  className="pointer"
+                  href="https://www.keyvalues.com/yc-funded-companies"
+                >
+                  &nbsp;<u>Key Values</u>.
+                </a>
+              </span>
+              <Items
+                currentPage={ currentPage }
+                isFetching={ isFetching }
+                items={ jobStories }
+                loadMore={ loadMore }
+                type="job"
+              />
+            </>
+          ) : <ErrorIndicator />
+        }
+
       </BodyWrapper>
     </>
   )
