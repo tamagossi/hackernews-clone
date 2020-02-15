@@ -9,7 +9,7 @@ const Footer = () => {
     { name: 'Support', url: '' },
     { name: 'API', url: '' },
     { name: 'Security', url: '' },
-    { name: 'Lists', url: '/jobs' },
+    { name: 'Lists', url: '' },
     { name: 'Bookmarklet', url: '' },
     { name: 'Legal', url: '' },
     { name: 'Apply to YC', url: '' },

@@ -7,7 +7,7 @@ const Navbar = () => {
   const menu = [
     { name: 'new', url: '/newest' },
     { name: 'past', url: '' },
-    { name: 'comment', url: '/newcomments' },
+    { name: 'comment', url: '' },
     { name: 'ask', url: '/ask' },
     { name: 'show', url: '/show' },
     { name: 'jobs', url: '/jobs' },
