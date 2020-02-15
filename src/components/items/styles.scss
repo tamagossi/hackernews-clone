@@ -1,0 +1,11 @@
+.has-line::before {
+  content: " | \00a0";
+}
+
+.has-space::before {
+  content: "\00a0";
+}
+
+.has-underline:hover {
+  text-decoration: underline;
+}

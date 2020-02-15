@@ -17,7 +17,7 @@ const Footer = () => {
   ]
 
   return (
-    <div className="footer-wrapper flex flex-wrap w-100 w-80-l pa3">
+    <div className="footer-wrapper flex flex-wrap w-100 w-80-l pa3 mb3">
       <NavLink
         className="w-100 fw6 tc"
         to="/"

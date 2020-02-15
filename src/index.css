@@ -24,3 +24,26 @@ a {
 }
 
 .pointer-default { cursor: default; }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  background-color: black;
+  border-radius: 6px;
+  color: #fff;
+  padding: 5px 20px;
+  text-align: center;
+  visibility: hidden;
+  width: 200px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
