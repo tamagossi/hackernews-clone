@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import BodyWrapper from '../../components/body-wrapper';
 import Items from '../../components/items';
-import { NavLink } from 'react-router-dom';
 
 const Jobpage = () => {
   const dispatch = useDispatch();
