@@ -1,7 +1,6 @@
 import React from 'react'
 import './styles.scss'
 
-import { NavLink } from 'react-router-dom';
 import mapTime from '../../utils/timeMap';
 import DisabledNavLink from '../disabled-link';
 import PropTypes from 'prop-types';
