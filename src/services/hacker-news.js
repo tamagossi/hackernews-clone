@@ -10,6 +10,7 @@ const getPageSlice = (limit, page = 0) => ({ begin: page * limit, end: (page + 1
 const getPageValues = ({ begin, end, items }) => items.slice(begin, end);
 
 hackerNewsService.getAskStoryIds = () => client.get(`/askstories${JSON_QUERY}`);
+hackerNewsService.getJobStoryIds = () => client.get(`/jobstories${JSON_QUERY}`);
 hackerNewsService.getNewestStoryIds = () => client.get(`/newstories${JSON_QUERY}`);
 hackerNewsService.getShowStoryIds = () => client.get(`/showstories${JSON_QUERY}`);
 hackerNewsService.getTopStoryIds = () => client.get(`/topstories${JSON_QUERY}`);
