@@ -23,7 +23,7 @@ class ErrorBoundary extends Component {
   render() {
     return this.state.hasErrored ? (
       <div className="error-wrapper">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/612187/mc-logo-white.svg" alt="Error" className="logo" width="192" />
+        <div className="logo" width="192"></div>
 
         <div className="browser">
           <div className="controls">

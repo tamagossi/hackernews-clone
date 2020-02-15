@@ -1,18 +1,16 @@
 import React, { Suspense } from 'react';
 
 import ErrorBoundary from './components/error-boundary'
-import Footer from './components/footer';
-import Navbar from './components/navbar'
-import Spinner from './components/spinner'
+import Spinner from './components/spinner';
 import routes from './routes';
 
 import { Route, Switch } from 'react-router-dom';
+import PageNotFound from './pages/not-found';
 
 const App = () => {
   return (
     <div className="App">
       <ErrorBoundary>
-        <Navbar />
         <Switch>
           <Suspense fallback={<Spinner />}>
             {
@@ -29,9 +27,9 @@ const App = () => {
                 ) : (null);
               })
             }
+            <Route component={PageNotFound} />
           </Suspense>
         </Switch>
-        <Footer />
       </ErrorBoundary>
     </div>
   );
