@@ -68,9 +68,9 @@ const Item = ({ currentPage, items, loadMore, type }) => {
                               ) : null
                             }
                           </span>
-                          <span className="comment-wrapper has-underline has-space pointer">
-                            { 
-                              type !== "new" ? 
+                          <span className="comment-wrapper has-underline has-line pointer">
+                            {
+                              type !== "new" ?
                                 `${item.kids ? item.kids.length : 0} comments` :
                                 null
                             }
