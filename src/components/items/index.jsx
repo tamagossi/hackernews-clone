@@ -34,7 +34,11 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
                         <h5 className="fw4 mv1 ml1 gray">
                           {
                             item.url ? (
-                              `(${item.url.replace(`https://`, ``).replace(`www.`, ``).split(`/`)[0]})`
+                              item.url.includes(`https`) ? (
+                                `(${item.url.replace(`https://`, ``).replace(`www.`, ``).split(`/`)[0]})`
+                              ) : (
+                                `(${item.url.replace(`http://`, ``).replace(`www.`, ``).split(`/`)[0]})`
+                              )
                             ) : null
                           }
                         </h5>
