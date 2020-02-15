@@ -19,10 +19,11 @@
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "run": "docker build -t hackernewsclone . && docker run -it -p 3000:3000 hackernewsclone",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
