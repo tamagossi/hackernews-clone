@@ -9,7 +9,7 @@ const Navbar = () => {
     { name: 'past', url: '' },
     { name: 'comment', url: '/newcomments' },
     { name: 'ask', url: '/ask' },
-    { name: 'show', url: '' },
+    { name: 'show', url: '/show' },
     { name: 'jobs', url: '/jobs' },
     { name: 'submit', url: '' },
   ]

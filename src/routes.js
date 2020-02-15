@@ -3,6 +3,7 @@ import React from 'react';
 const AskPage = React.lazy(() => import('./pages/ask/'));
 const HomePage = React.lazy(() => import('./pages/homepage/'));
 const NewPage = React.lazy(() => import('./pages/newest/'));
+const ShowPage = React.lazy(() => import('./pages/show/'));
 
 const routes = [
   {
@@ -22,6 +23,12 @@ const routes = [
     exact: true,
     name: 'Newest',
     path: '/newest',
+  },
+  {
+    component : ShowPage,
+    exact: true,
+    name: 'Show',
+    path: '/show',
   },
 ];
 
