@@ -4,7 +4,7 @@ import './styles.scss'
 import mapTime from '../../utils/timeMap';
 import DisabledNavLink from '../disabled-link';
 import PropTypes from 'prop-types';
-
+import { PAGE_LIMIT } from '../../services/hacker-news'
 
 const Item = ({ currentPage, items, loadMore, type }) => {
   return (
@@ -20,7 +20,7 @@ const Item = ({ currentPage, items, loadMore, type }) => {
                     key={ item.id }
                   >
                     <h5 className="item-number gray f5 fw6 mv0">
-                      { currentPage * 30 + index + 1}.
+                      { currentPage * PAGE_LIMIT + index + 1}.
                     </h5>
                     <i className="fa fa-caret-up tooltip ml1 gray pointer">
                       <span className="tooltiptext">Vote functionality is disabled at the moment</span>

@@ -5,7 +5,7 @@ const JSON_QUERY = '.json?print=pretty';
 const client = new Service({ baseURL: BASE_URL });
 const hackerNewsService = {};
 
-const PAGE_LIMIT = 30;
+export const PAGE_LIMIT = 30;
 const getPageSlice = (limit, page = 0) => ({ begin: page * limit, end: (page + 1) * limit });
 const getPageValues = ({ begin, end, items }) => items.slice(begin, end);
 

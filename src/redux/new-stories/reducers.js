@@ -27,7 +27,7 @@ const newestStoriesReducer = (state = INITIAL_STATE, action) => {
         isFetching: false,
         newestStories: action.payload,
     };
-    case types.INCREASE_CURRENT_PAGE:
+    case types.INCREASE_CURRENT_NEWPAGE:
       return {
         ...state,
         currentPage: state.currentPage + action.payload,

@@ -35,6 +35,6 @@ export const fetchTopStoriesStartAsync = (page = 0) => {
 };
 
 export const increasePageNumber = () => ({
-  type: types.INCREASE_CURRENT_PAGE,
+  type: types.INCREASE_CURRENT_TOPPAGE,
   payload: 1
 });
