@@ -3,6 +3,7 @@ import React, { Suspense } from 'react';
 import ErrorBoundary from './components/error-boundary'
 import Footer from './components/footer';
 import Navbar from './components/navbar'
+import Spinner from './components/spinner'
 import routes from './routes';
 
 import { Route, Switch } from 'react-router-dom';
@@ -13,7 +14,7 @@ const App = () => {
       <ErrorBoundary>
         <Navbar />
         <Switch>
-          <Suspense fallback={<div> Loading... </div>}>
+          <Suspense fallback={<Spinner />}>
             {
               routes.map((route, idx) => {
                 return route.component ? (

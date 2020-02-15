@@ -4,7 +4,8 @@ import './styles.scss'
 import mapTime from '../../utils/timeMap';
 import DisabledNavLink from '../disabled-link';
 import PropTypes from 'prop-types';
-import { PAGE_LIMIT } from '../../services/hacker-news'
+import Spinner from '../spinner';
+import { PAGE_LIMIT } from '../../services/hacker-news';
 
 const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
   return (
@@ -146,7 +147,7 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
               ) : null
             }
           </>
-        ) : null
+        ) : <Spinner />
       }
     </>
   )

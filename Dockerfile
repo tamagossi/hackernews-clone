@@ -1,5 +1,5 @@
 #base image
-FROM node
+FROM node:12.16.0-stretch
 
 #set working directory
 RUN mkdir /usr/src/app
@@ -16,7 +16,4 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 RUN npm install
 
 #start app
-CMD ["npm", "install"]
-
-#docker build -t <setyourtaghere> .
-#docker run -it -p 3000:3000 <tagname>
+CMD ["npm", "start"]
