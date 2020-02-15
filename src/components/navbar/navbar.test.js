@@ -17,13 +17,13 @@ describe(`Navbar component`, () => {
 
   it('should contains image wrapper', () => {
     expect(
-      wrapper.find(`.menu-wrapper`).length
-    ).toEqual(1)
+      wrapper.find(`.menu-wrapper`).exists()
+    ).toBeTruthy()
   })
 
   it('should contains title wrapper', () => {
     expect(
-      wrapper.find(`.menu-title`).length
-    ).toEqual(1)
+      wrapper.find(`.menu-title`).exists
+    ).toBeTruthy()
   })
 });
