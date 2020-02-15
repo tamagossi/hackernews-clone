@@ -26,7 +26,7 @@ const Navbar = () => {
             />
           </NavLink>
         </div>
-        <div className="menu-wrapper w-90 flex flex-wrap pv1-l">
+        <div className="menu-wrapper w-90 flex flex-wrap pt2 pt0-l pv1-l">
           <NavLink
             className="menu-title w-100 f4 fw7"
             to=""
@@ -34,7 +34,7 @@ const Navbar = () => {
           >
             Hacker News
           </NavLink>
-          <div className="menu-item w-100 f6 f5-l fw5 fw4-l">
+          <div className="menu-item w-100 f6 f5-l fw5 pb2 pb0-l fw4-l">
             {
               menu.map((item, index) => {
                 const linkTag = item.url.length > 1 ? (
