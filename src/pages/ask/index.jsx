@@ -12,8 +12,10 @@ import Items from '../../components/items';
 
 const Askpage = () => {
   const dispatch = useDispatch();
-  const currentPage = useSelector(state => state.askStories.currentPage);
+
   const askStories = useSelector(state => state.askStories.askStories);
+  const currentPage = useSelector(state => state.askStories.currentPage);
+  const isFetching = useSelector(state => state.askStories.isFetching);
 
   const loadMore = () => {
     dispatch(increasePageNumber())
@@ -29,6 +31,7 @@ const Askpage = () => {
       <BodyWrapper>
         <Items
           currentPage={ currentPage }
+          isFetching={ isFetching }
           items={ askStories }
           loadMore={ loadMore }
           type="ask"

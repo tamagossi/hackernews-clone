@@ -6,11 +6,11 @@ import DisabledNavLink from '../disabled-link';
 import PropTypes from 'prop-types';
 import { PAGE_LIMIT } from '../../services/hacker-news'
 
-const Item = ({ currentPage, items, loadMore, type }) => {
+const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
   return (
     <>
       {
-        items ? (
+        !isFetching ? (
           <>
             {
               items.map((item, index) => {
@@ -129,6 +129,7 @@ const Item = ({ currentPage, items, loadMore, type }) => {
 
 Item.propTypes = {
   currentPage: PropTypes.number.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
   loadMore: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,

@@ -13,6 +13,7 @@ import Items from '../../components/items/';
 const Homepage = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector(state => state.topStories.currentPage);
+  const isFetching = useSelector(state => state.topStories.isFetching);
   const topStories = useSelector(state => state.topStories.topStories);
 
   const loadMore = () => {
@@ -28,6 +29,7 @@ const Homepage = () => {
       <BodyWrapper>
         <Items
           currentPage={ currentPage }
+          isFetching={ isFetching }
           items={ topStories }
           loadMore={ loadMore }
           type="home"

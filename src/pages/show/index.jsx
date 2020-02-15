@@ -13,6 +13,7 @@ import Items from '../../components/items';
 const Showpage = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector(state => state.showStories.currentPage);
+  const isFetching = useSelector(state => state.showStories.isFetching);
   const showStories = useSelector(state => state.showStories.showStories);
 
   const loadMore = () => {
@@ -40,6 +41,7 @@ const Showpage = () => {
         </h5>
         <Items
           currentPage={ currentPage }
+          isFetching={ isFetching }
           items={ showStories }
           loadMore={ loadMore }
           type="show"
