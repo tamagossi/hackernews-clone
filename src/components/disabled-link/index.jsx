@@ -8,13 +8,14 @@ const DisabledNavLink = ({ children, message = null, otherClass}) => {
   return (
     <NavLink
       className={ `${otherClass} tooltip`}
-      to="#"
+      disabled
+      to=""
     >
       <span className="tooltiptext">
         {
           message ?
           message :
-          `Currently disabled. Will be directed nowhere`
+          `Currently disabled. Will be directed to home`
         }
       </span>
       { children }
