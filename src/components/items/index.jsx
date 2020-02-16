@@ -1,10 +1,11 @@
 import React from 'react'
 import './styles.scss'
 
+import Item from '../item/';
 import PropTypes from 'prop-types';
 import Spinner from '../spinner';
 
-const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
+const Items = ({ currentPage, isFetching, items, loadMore, type }) => {
   return (
     <>
       {
@@ -44,7 +45,7 @@ const Item = ({ currentPage, isFetching, items, loadMore, type }) => {
   )
 }
 
-Item.propTypes = {
+Items.propTypes = {
   currentPage: PropTypes.number.isRequired,
   isFetching: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
@@ -52,4 +53,4 @@ Item.propTypes = {
   type: PropTypes.string.isRequired,
 }
 
-export default Item
+export default Items

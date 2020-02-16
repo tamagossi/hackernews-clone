@@ -12,9 +12,13 @@ const Item = ({ currentPage, index, item, type }) => {
       {
         type !== "job" ? (
           <>
-            <h5 className="item-number gray f5 fw6 mv0">
-              { currentPage * PAGE_LIMIT + index + 1}.
-            </h5>
+            {
+              type !== "detail" ? (
+                <h5 className="item-number gray f5 fw6 mv0">
+                  { currentPage * PAGE_LIMIT + index + 1}.
+                </h5>
+              ) : null
+            }
             <i className="fa fa-caret-up tooltip ml1 gray pointer">
               <span className="tooltiptext">Vote functionality is disabled at the moment</span>
             </i>
@@ -126,8 +130,8 @@ const Item = ({ currentPage, index, item, type }) => {
 }
 
 Item.propTypes = {
-  currentPage: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired,
+  currentPage: PropTypes.number,
+  index: PropTypes.number,
   item: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
 }
