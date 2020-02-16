@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import './styles.scss';
 
 import DisabledNavLink from '../disabled-link';
@@ -10,7 +10,7 @@ import Spinner from '../spinner';
 const Comments = ({ kids }) => {
   const [comments, setComments] = useState(null)
 
-  useEffect(() => {
+  const fetchItem = useCallback(() => {
     hackerNewsService.getStories(kids)
       .then(res => {
         res.forEach(item => {
@@ -19,7 +19,11 @@ const Comments = ({ kids }) => {
         setComments(res)
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [kids])
+
+  useEffect(() => {
+    fetchItem();
+  }, [fetchItem])
 
   const createMarkUp = (content) => {
     return {__html: content}

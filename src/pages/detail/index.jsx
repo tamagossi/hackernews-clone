@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { withRouter } from 'react-router-dom';
 import BodyWrapper from '../../components/body-wrapper/';
@@ -11,11 +11,15 @@ import Spinner from '../../components/spinner';
 const DetailPage = ({ location }) => {
   const [item, setItem] = useState(null);
 
-  useEffect(() => {
+  const fetchItem = useCallback(() => {
     hackerNewsService.getStory(location.search.split(`=`)[1])
       .then(res => setItem(res))
       .catch(err => console.log(err))
-  }, [])
+  }, [location.search])
+
+  useEffect(() => {
+    fetchItem();
+  }, [fetchItem]);
 
   return (
     <BodyWrapper>
