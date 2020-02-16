@@ -47,7 +47,7 @@ class ErrorBoundary extends Component {
         </div>
 
         <h1 className="error-title">Unfortunately, something has gone wrong.</h1>
-        <p>We`re unable to fulfill your request. Rest assured we have been notified and are looking into the issue. Please refresh your browser. If the error continues, please contact our support team.</p>
+        <p className="error-paragraph">We`re unable to fulfill your request. Rest assured we have been notified and are looking into the issue. Please refresh your browser. If the error continues, please contact our support team.</p>
       </div>
     ) :
     (
