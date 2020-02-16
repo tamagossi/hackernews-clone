@@ -16,6 +16,10 @@ hackerNewsService.getShowStoryIds = () => client.get(`/showstories${JSON_QUERY}`
 hackerNewsService.getTopStoryIds = () => client.get(`/topstories${JSON_QUERY}`);
 
 hackerNewsService.getStory = id => client.get(`/item/${id}${JSON_QUERY}`);
+hackerNewsService.getStories = (ids) => {
+  const storyPromises = ids.map(id => hackerNewsService.getStory(id));
+  return Promise.all(storyPromises);
+};
 hackerNewsService.getStoriesByPage = (ids, page) => {
   const { begin, end } = getPageSlice(PAGE_LIMIT, page);
   const activeIds = getPageValues({ begin, end, items: ids });
