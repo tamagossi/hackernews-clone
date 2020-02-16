@@ -5,6 +5,7 @@ import mapTime from '../../utils/timeMap';
 import DisabledNavLink from '../disabled-link';
 import PropTypes from 'prop-types';
 import { PAGE_LIMIT } from '../../services/hacker-news';
+import { NavLink } from 'react-router-dom';
 
 const Item = ({ currentPage, index, item, type }) => {
   return (
@@ -115,9 +116,12 @@ const Item = ({ currentPage, index, item, type }) => {
                 (
                     type !== 'job' ?
                     (
-                      <span className="comment-wrapper has-underline has-line pointer">
+                      <NavLink
+                        className="comment-wrapper has-underline has-line pointer"
+                        to={`/item?id=${item.id}`}
+                      >
                         {item.kids ? item.kids.length : 0} comments
-                      </span>
+                      </NavLink>
                     ) :
                     null
                 ) : null
@@ -132,7 +136,7 @@ const Item = ({ currentPage, index, item, type }) => {
 Item.propTypes = {
   currentPage: PropTypes.number,
   index: PropTypes.number,
-  item: PropTypes.array.isRequired,
+  item: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired,
 }
 

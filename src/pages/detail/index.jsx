@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import { withRouter } from 'react-router-dom';
+import BodyWrapper from '../../components/body-wrapper/';
+import Comments from '../../components/comments';
 import hackerNewsService from '../../services/hacker-news';
+import Item from '../../components/item';
 import PropTypes from 'prop-types';
 import Spinner from '../../components/spinner';
-import Item from '../../components/item';
-import BodyWrapper from '../../components/body-wrapper/';
 
 const DetailPage = ({ location }) => {
   const [item, setItem] = useState(null);
@@ -14,7 +15,7 @@ const DetailPage = ({ location }) => {
     hackerNewsService.getStory(location.search.split(`=`)[1])
       .then(res => setItem(res))
       .catch(err => console.log(err))
-  })
+  }, [])
 
   return (
     <BodyWrapper>
@@ -47,7 +48,9 @@ const DetailPage = ({ location }) => {
             </div>
             <div className="comment-wrapper ph3">
               {
-                item.kids.map((kid) => <div key={kid}>{ kid }&nbsp;</div>)
+                item.kids ?
+                  <Comments kids={ item.kids } /> :
+                  null
               }
             </div>
           </div>
