@@ -3,19 +3,17 @@
 - This a repo for HackerNews Clone currently for Sampingan Front End Test.
   This repo was boostrapped with standart create-react-app
 
-### Project
-
 ### Project Dependencies
-- *axios* library to make http request
+- **axios** library to make http request
 - **eslint** with basic react configuration
 - **node.js** version 12.14.1
-- *node-sass* library to make scss available in react
-- *enzyme* library for testing
+- **node-sass** library to make scss available in react
+- **enzyme** library for testing
 - **npm** version 6.13.4
-- *redux* library for state management
-    - *redux-logger* library for logging state in development
-    - *redux-thunk* library for async store
-- *tachyons* library for css styling
+- **redux** library for state management
+    - **redux-logger** library for logging state in development
+    - **redux-thunk** library for async store
+- **tachyons** library for css styling
 
 
 ### Project Development Guide
