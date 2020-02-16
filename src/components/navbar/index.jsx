@@ -68,7 +68,10 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right-menu relative w-10">
-        <div className="absolute el-centered">login</div>
+        <div className="absolute el-centered pointer tooltip">
+          login
+          <span className="tooltiptext">login functionality is disabled at the moment</span>
+        </div>
       </div>
     </div>
   )
