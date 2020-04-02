@@ -1,6 +1,6 @@
 ## HackerNews Clone
 
-This a repo for HackerNews Clone currently for Sampingan Front End Test. This repo was boostrapped with standart create-react-app
+This a repo for HackerNews Clone. This repo was boostrapped with standart create-react-app
 
 ### Project Dependencies
 - **axios** library to make http request
